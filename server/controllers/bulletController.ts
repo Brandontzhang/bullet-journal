@@ -33,8 +33,8 @@ class BulletController {
   private async getBullets(req : Request, resp : Response) {
     try {
       let res = await db.query("SELECT * FROM BULLETS");
-      resp.sendStatus(200);
-      return res;
+      // resp.sendStatus(200);
+      resp.send(res);
     } catch (e) {
       resp.send(e);
     }

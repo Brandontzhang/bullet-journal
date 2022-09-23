@@ -2,11 +2,14 @@ import express, { Express, Request, Response } from 'express';
 import BulletController from './controllers/bulletController';
 const dotenv = require("dotenv");
 const bodyParser = require("body-parser");
+const cors = require('cors');
 
 dotenv.config();
 
 const app: Express = express();
 const port = process.env.SERVERPORT;
+
+app.use(cors());
 
 // create application/json parser
 var jsonParser = bodyParser.json();
