@@ -1,9 +1,9 @@
 import './App.css';
-import Home from './components/home';
+import BulletList from './components/BulletListView/BulletList';
 
 function App() {
   return (
-    <Home/>
+    <BulletList/>
   );
 }
 

@@ -22,8 +22,7 @@ class BulletController {
     let newBullet : Bullet = new Bullet().createBullet(req.body);
     try {
       await db.query(`INSERT INTO BULLETS (TITLE, DETAILS, DATE, STATUS) VALUES('${newBullet.title}','${newBullet.details}','${newBullet.date}', '${newBullet.status}')`);
-      resp.sendStatus(200);
-      return newBullet;
+      resp.send(newBullet);
     } catch (e) {
       resp.send(e);
     }
